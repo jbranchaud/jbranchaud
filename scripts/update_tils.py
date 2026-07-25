@@ -15,8 +15,8 @@ import sys
 
 TIL_REPO_URL = "https://github.com/jbranchaud/til"
 TIL_BRANCH = "master"
-START_MARKER = "<!-- TIL-START -->"
-END_MARKER = "<!-- TIL-END -->"
+LIST_MARKERS = ("<!-- TIL-START -->", "<!-- TIL-END -->")
+COUNT_MARKERS = ("<!-- TIL-COUNT-START -->", "<!-- TIL-COUNT-END -->")
 
 
 def added_tils(til_dir: pathlib.Path, count: int) -> list[tuple[str, str]]:
@@ -59,6 +59,17 @@ def added_tils(til_dir: pathlib.Path, count: int) -> list[tuple[str, str]]:
     return results
 
 
+def til_count(til_dir: pathlib.Path) -> int:
+    """Count every TIL file, matching the `*/*.md` shape used for discovery."""
+    out = subprocess.run(
+        ["git", "-C", str(til_dir), "ls-files", "*/*.md"],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout
+    return len([line for line in out.splitlines() if line.strip()])
+
+
 def title_for(til_dir: pathlib.Path, path: str) -> str:
     for line in (til_dir / path).read_text(encoding="utf-8").splitlines():
         if line.startswith("# "):
@@ -78,19 +89,15 @@ def render(til_dir: pathlib.Path, entries: list[tuple[str, str]]) -> str:
     return "\n".join(lines)
 
 
-def splice(readme: pathlib.Path, body: str) -> bool:
-    original = readme.read_text(encoding="utf-8")
-    pattern = re.compile(
-        f"{re.escape(START_MARKER)}.*?{re.escape(END_MARKER)}", re.DOTALL
-    )
-    if not pattern.search(original):
-        sys.exit(f"error: {readme} is missing {START_MARKER}/{END_MARKER} markers")
+def splice(text: str, markers: tuple[str, str], body: str, inline: bool = False) -> str:
+    start, end = markers
+    pattern = re.compile(f"{re.escape(start)}.*?{re.escape(end)}", re.DOTALL)
+    if not pattern.search(text):
+        sys.exit(f"error: README is missing {start}/{end} markers")
 
-    updated = pattern.sub(f"{START_MARKER}\n{body}\n{END_MARKER}", original)
-    if updated == original:
-        return False
-    readme.write_text(updated, encoding="utf-8")
-    return True
+    sep = "" if inline else "\n"
+    # Lambda replacement so backslashes in TIL titles aren't read as backrefs.
+    return pattern.sub(lambda _: f"{start}{sep}{body}{sep}{end}", text)
 
 
 def main() -> None:
@@ -104,8 +111,20 @@ def main() -> None:
     if not entries:
         sys.exit("error: no TILs found")
 
-    changed = splice(args.readme, render(args.til_dir, entries))
-    print("README updated" if changed else "no changes")
+    original = args.readme.read_text(encoding="utf-8")
+    updated = splice(original, LIST_MARKERS, render(args.til_dir, entries))
+    updated = splice(
+        updated,
+        COUNT_MARKERS,
+        f"{til_count(args.til_dir):,}",
+        inline=True,
+    )
+
+    if updated == original:
+        print("no changes")
+        return
+    args.readme.write_text(updated, encoding="utf-8")
+    print("README updated")
 
 
 if __name__ == "__main__":

@@ -10,4 +10,4 @@
 - [Resurface Exceptions Swallowed By Click Under Test](https://github.com/jbranchaud/til/blob/master/python/resurface-exceptions-swallowed-by-click-under-test.md) <sup>`python` · 2026-07-22</sup>
 <!-- TIL-END -->
 
-More at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,836<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
