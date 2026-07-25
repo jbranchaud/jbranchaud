@@ -1,0 +1,36 @@
+name: Update latest TILs
+
+on:
+  schedule:
+    - cron: '17 11 * * *' # daily at 11:17 UTC (06:17 CT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: jbranchaud/til
+          path: til-repo
+          fetch-depth: 0 # full history needed for --diff-filter=A
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - run: python scripts/update_tils.py
+
+      - run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || {
+            git commit -m "chore: update latest TILs"
+            git push
+          }
