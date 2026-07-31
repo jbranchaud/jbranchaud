@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Another Way To Mark Keyword-Only Dataclass Fields](https://github.com/jbranchaud/til/blob/master/python/another-way-to-mark-keyword-only-dataclass-fields.md) <sup>`python` · 2026-07-30</sup>
+- [Run Scheduled Action To Commit Regular Updates](https://github.com/jbranchaud/til/blob/master/github-actions/run-scheduled-action-to-commit-regular-updates.md) <sup>`github-actions` · 2026-07-29</sup>
 - [Dedent Common Whitespace From Multiline String](https://github.com/jbranchaud/til/blob/master/python/dedent-common-whitespace-from-multiline-string.md) <sup>`python` · 2026-07-29</sup>
 - [Open Current Command Line Prompt In Editor](https://github.com/jbranchaud/til/blob/master/zsh/open-current-command-line-prompt-in-editor.md) <sup>`zsh` · 2026-07-28</sup>
 - [Start Jupyter Notebook With Extra Packages](https://github.com/jbranchaud/til/blob/master/python/start-jupyter-notebook-with-extra-packages.md) <sup>`python` · 2026-07-27</sup>
-- [Include A File With Message To `ant`](https://github.com/jbranchaud/til/blob/master/llm/include-a-file-with-message-to-ant.md) <sup>`llm` · 2026-07-27</sup>
-- [Configure Other Attributes Of Dataclass Field](https://github.com/jbranchaud/til/blob/master/python/configure-other-attributes-of-dataclass-field.md) <sup>`python` · 2026-07-26</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,844<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,846<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
@@ -22,7 +22,7 @@ I've written <!-- TIL-COUNT-START -->1,844<!-- TIL-COUNT-END --> TILs and counti
 <a href="https://github.com/jbranchaud/til/tree/master/vim"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/vim-159-dark.svg"><img alt="vim: 159 TILs" src="assets/tiles/vim-159-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/git"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/git-134-dark.svg"><img alt="git: 134 TILs" src="assets/tiles/git-134-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/javascript"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/javascript-105-dark.svg"><img alt="javascript: 105 TILs" src="assets/tiles/javascript-105-light.svg"></picture></a>
+<a href="https://github.com/jbranchaud/til/tree/master/python"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/python-57-dark.svg"><img alt="python: 57 TILs" src="assets/tiles/python-57-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/react"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/react-57-dark.svg"><img alt="react: 57 TILs" src="assets/tiles/react-57-light.svg"></picture></a>
-<a href="https://github.com/jbranchaud/til/tree/master/python"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/python-56-dark.svg"><img alt="python: 56 TILs" src="assets/tiles/python-56-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/elixir"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/elixir-52-dark.svg"><img alt="elixir: 52 TILs" src="assets/tiles/elixir-52-light.svg"></picture></a>
 <!-- TIL-TOP-END -->
