@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Move YouTube Subtitles Out Of The Way](https://github.com/jbranchaud/til/blob/master/workflow/move-youtube-subtitles-out-of-the-way.md) <sup>`workflow` · 2026-07-31</sup>
 - [Another Way To Mark Keyword-Only Dataclass Fields](https://github.com/jbranchaud/til/blob/master/python/another-way-to-mark-keyword-only-dataclass-fields.md) <sup>`python` · 2026-07-30</sup>
 - [Run Scheduled Action To Commit Regular Updates](https://github.com/jbranchaud/til/blob/master/github-actions/run-scheduled-action-to-commit-regular-updates.md) <sup>`github-actions` · 2026-07-29</sup>
 - [Dedent Common Whitespace From Multiline String](https://github.com/jbranchaud/til/blob/master/python/dedent-common-whitespace-from-multiline-string.md) <sup>`python` · 2026-07-29</sup>
 - [Open Current Command Line Prompt In Editor](https://github.com/jbranchaud/til/blob/master/zsh/open-current-command-line-prompt-in-editor.md) <sup>`zsh` · 2026-07-28</sup>
-- [Start Jupyter Notebook With Extra Packages](https://github.com/jbranchaud/til/blob/master/python/start-jupyter-notebook-with-extra-packages.md) <sup>`python` · 2026-07-27</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,846<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,847<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
