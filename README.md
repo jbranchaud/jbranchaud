@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Manage Lightweight Schema Migrations With `user_version`](https://github.com/jbranchaud/til/blob/master/sqlite/manage-lightweight-schema-migrations-with-user-version.md) <sup>`sqlite` · 2026-08-04</sup>
 - [Mark A Release With An Annotated Tag](https://github.com/jbranchaud/til/blob/master/git/mark-a-release-with-an-annotated-tag.md) <sup>`git` · 2026-08-02</sup>
 - [Experiment With SQLite Queries In Memory](https://github.com/jbranchaud/til/blob/master/python/experiment-with-sqlite-queries-in-memory.md) <sup>`python` · 2026-08-01</sup>
 - [Move YouTube Subtitles Out Of The Way](https://github.com/jbranchaud/til/blob/master/workflow/move-youtube-subtitles-out-of-the-way.md) <sup>`workflow` · 2026-07-31</sup>
 - [Another Way To Mark Keyword-Only Dataclass Fields](https://github.com/jbranchaud/til/blob/master/python/another-way-to-mark-keyword-only-dataclass-fields.md) <sup>`python` · 2026-07-30</sup>
-- [Run Scheduled Action To Commit Regular Updates](https://github.com/jbranchaud/til/blob/master/github-actions/run-scheduled-action-to-commit-regular-updates.md) <sup>`github-actions` · 2026-07-29</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,849<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,850<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
