@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Where And Which Are Whence](https://github.com/jbranchaud/til/blob/master/zsh/where-and-which-are-whence.md) <sup>`zsh` · 2026-08-12</sup>
 - [Combine StrEnum With Pydantic For Union Type](https://github.com/jbranchaud/til/blob/master/python/combine-strenum-with-pydantic-for-union-type.md) <sup>`python` · 2026-08-10</sup>
 - [Convert Arbitrary Number To Probability With Sigmoid](https://github.com/jbranchaud/til/blob/master/math/convert-arbitrary-number-to-probability-with-sigmoid.md) <sup>`math` · 2026-08-09</sup>
 - [Sequence Side-Effect When Rolling Back Inserts](https://github.com/jbranchaud/til/blob/master/postgres/sequence-side-effect-when-rolling-back-inserts.md) <sup>`postgres` · 2026-08-08</sup>
 - [Annotate Return Type On Enum Function](https://github.com/jbranchaud/til/blob/master/python/annotate-return-type-on-enum-function.md) <sup>`python` · 2026-08-07</sup>
-- [Filter By Truthy Values With Boolean Function](https://github.com/jbranchaud/til/blob/master/javascript/filter-by-truthy-values-with-boolean-function.md) <sup>`javascript` · 2026-08-07</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,858<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,859<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
