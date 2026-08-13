@@ -3,19 +3,19 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Handle Bad Numerical Amounts With BigDecimal](https://github.com/jbranchaud/til/blob/master/rails/handle-bad-numerical-amounts-with-big-decimal.md) <sup>`rails` · 2026-08-12</sup>
 - [Where And Which Are Whence](https://github.com/jbranchaud/til/blob/master/zsh/where-and-which-are-whence.md) <sup>`zsh` · 2026-08-12</sup>
 - [Combine StrEnum With Pydantic For Union Type](https://github.com/jbranchaud/til/blob/master/python/combine-strenum-with-pydantic-for-union-type.md) <sup>`python` · 2026-08-10</sup>
 - [Convert Arbitrary Number To Probability With Sigmoid](https://github.com/jbranchaud/til/blob/master/math/convert-arbitrary-number-to-probability-with-sigmoid.md) <sup>`math` · 2026-08-09</sup>
 - [Sequence Side-Effect When Rolling Back Inserts](https://github.com/jbranchaud/til/blob/master/postgres/sequence-side-effect-when-rolling-back-inserts.md) <sup>`postgres` · 2026-08-08</sup>
-- [Annotate Return Type On Enum Function](https://github.com/jbranchaud/til/blob/master/python/annotate-return-type-on-enum-function.md) <sup>`python` · 2026-08-07</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,859<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,860<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
 <!-- TIL-TOP-START -->
-<a href="https://github.com/jbranchaud/til/tree/master/rails"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/rails-186-dark.svg"><img alt="rails: 186 TILs" src="assets/tiles/rails-186-light.svg"></picture></a>
+<a href="https://github.com/jbranchaud/til/tree/master/rails"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/rails-187-dark.svg"><img alt="rails: 187 TILs" src="assets/tiles/rails-187-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/unix"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/unix-184-dark.svg"><img alt="unix: 184 TILs" src="assets/tiles/unix-184-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/postgres"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/postgres-175-dark.svg"><img alt="postgres: 175 TILs" src="assets/tiles/postgres-175-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/ruby"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/ruby-171-dark.svg"><img alt="ruby: 171 TILs" src="assets/tiles/ruby-171-light.svg"></picture></a>
