@@ -3,20 +3,20 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Check What Is Inside A Zip File](https://github.com/jbranchaud/til/blob/master/unix/check-what-is-inside-a-zip-file.md) <sup>`unix` · 2026-08-22</sup>
 - [Generate Sample PDFs With ReportLab](https://github.com/jbranchaud/til/blob/master/python/generate-sample-pdfs-with-reportlab.md) <sup>`python` · 2026-08-21</sup>
 - [Remove Pages From A PDF](https://github.com/jbranchaud/til/blob/master/workflow/remove-pages-from-a-pdf.md) <sup>`workflow` · 2026-08-19</sup>
 - [Escape Curly Braces Within Formatted String](https://github.com/jbranchaud/til/blob/master/python/escape-curly-braces-within-formatted-string.md) <sup>`python` · 2026-08-19</sup>
 - [Duplicate Current Browser Tab](https://github.com/jbranchaud/til/blob/master/chrome/duplicate-current-browser-tab.md) <sup>`chrome` · 2026-08-19</sup>
-- [Join A List Of Strings](https://github.com/jbranchaud/til/blob/master/python/join-a-list-of-strings.md) <sup>`python` · 2026-08-18</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,870<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,871<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
 <!-- TIL-TOP-START -->
 <a href="https://github.com/jbranchaud/til/tree/master/rails"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/rails-187-dark.svg"><img alt="rails: 187 TILs" src="assets/tiles/rails-187-light.svg"></picture></a>
-<a href="https://github.com/jbranchaud/til/tree/master/unix"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/unix-185-dark.svg"><img alt="unix: 185 TILs" src="assets/tiles/unix-185-light.svg"></picture></a>
+<a href="https://github.com/jbranchaud/til/tree/master/unix"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/unix-186-dark.svg"><img alt="unix: 186 TILs" src="assets/tiles/unix-186-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/postgres"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/postgres-175-dark.svg"><img alt="postgres: 175 TILs" src="assets/tiles/postgres-175-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/ruby"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/ruby-172-dark.svg"><img alt="ruby: 172 TILs" src="assets/tiles/ruby-172-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/vim"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/vim-159-dark.svg"><img alt="vim: 159 TILs" src="assets/tiles/vim-159-light.svg"></picture></a>
