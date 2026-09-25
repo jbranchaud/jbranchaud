@@ -2,7 +2,8 @@
 """Splice the N most recently *added* TILs into README.md.
 
 Uses `git log --diff-filter=A` against a local clone of the TIL repo so that
-edits to existing TILs never resurface them.
+edits to existing TILs never resurface them. Also splices in the latest
+blogmarks from the VisualMode Atom feed.
 """
 
 from __future__ import annotations
@@ -14,6 +15,8 @@ import re
 import shutil
 import subprocess
 import sys
+import urllib.request
+import xml.etree.ElementTree as ET
 import xml.sax.saxutils as saxutils
 
 TIL_REPO_URL = "https://github.com/jbranchaud/til"
@@ -21,6 +24,9 @@ TIL_BRANCH = "master"
 LIST_MARKERS = ("<!-- TIL-START -->", "<!-- TIL-END -->")
 COUNT_MARKERS = ("<!-- TIL-COUNT-START -->", "<!-- TIL-COUNT-END -->")
 TOP_MARKERS = ("<!-- TIL-TOP-START -->", "<!-- TIL-TOP-END -->")
+BLOGMARK_MARKERS = ("<!-- BLOGMARKS-START -->", "<!-- BLOGMARKS-END -->")
+BLOGMARK_FEED_URL = "https://still.visualmode.dev/feed"
+ATOM = "{http://www.w3.org/2005/Atom}"
 
 # Brand accent per category; anything unlisted falls back to GitHub's gray.
 BRAND = {
@@ -135,6 +141,33 @@ def render(til_dir: pathlib.Path, entries: list[tuple[str, str]]) -> str:
     return "\n".join(lines)
 
 
+def latest_blogmarks(url: str, count: int) -> list[tuple[str, str, str]]:
+    """Return [(title, link, iso_date)] for the `count` newest feed entries."""
+    request = urllib.request.Request(url, headers={"User-Agent": "jbranchaud-readme"})
+    with urllib.request.urlopen(request, timeout=30) as response:
+        root = ET.fromstring(response.read())
+
+    results = []
+    for entry in root.iter(f"{ATOM}entry"):
+        link = entry.find(f"{ATOM}link[@rel='alternate']")
+        if link is None:
+            link = entry.find(f"{ATOM}link")
+        date = entry.findtext(f"{ATOM}published") or entry.findtext(f"{ATOM}updated", "")
+        title = (entry.findtext(f"{ATOM}title") or "").strip()
+        results.append((title, link.get("href", "") if link is not None else "", date))
+    results.sort(key=lambda item: item[2], reverse=True)
+    return results[:count]
+
+
+def render_blogmarks(entries: list[tuple[str, str, str]]) -> str:
+    lines = []
+    for title, link, date in entries:
+        # Brackets in titles would break the markdown link.
+        title = title.replace("[", "\\[").replace("]", "\\]")
+        lines.append(f"- [{title}]({link}) <sup>{date[:10]}</sup>")
+    return "\n".join(lines)
+
+
 def tile_svg(category: str, count: int, theme: str) -> str:
     """One name plate: brand-colored edge, category label, count as numeral."""
     background, border, label_fill, count_fill = THEMES[theme]
@@ -208,6 +241,7 @@ def main() -> None:
     parser.add_argument("--count", default=5, type=int)
     parser.add_argument("--top", default=10, type=int)
     parser.add_argument("--assets", default="assets/tiles", type=pathlib.Path)
+    parser.add_argument("--feed", default=BLOGMARK_FEED_URL)
     args = parser.parse_args()
 
     entries = added_tils(args.til_dir, args.count)
@@ -223,6 +257,15 @@ def main() -> None:
         TOP_MARKERS,
         render_tiles(top_categories(paths, args.top), args.assets),
     )
+
+    # A flaky feed shouldn't block the TIL update; keep the last good list.
+    try:
+        blogmarks = latest_blogmarks(args.feed, args.count)
+    except Exception as error:  # noqa: BLE001
+        print(f"warning: skipping blogmarks: {error}", file=sys.stderr)
+        blogmarks = []
+    if blogmarks:
+        updated = splice(updated, BLOGMARK_MARKERS, render_blogmarks(blogmarks))
 
     if updated == original:
         print("no changes")
