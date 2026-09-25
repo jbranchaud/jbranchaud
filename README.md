@@ -12,6 +12,18 @@
 
 I've written <!-- TIL-COUNT-START -->1,882<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
+## Latest Blogmarks
+
+<!-- BLOGMARKS-START -->
+- [10x the learning per feature](https://still.visualmode.dev/blogmarks/342) <sup>2026-09-23</sup>
+- [Introducing System One Models & Jev](https://still.visualmode.dev/blogmarks/341) <sup>2026-09-23</sup>
+- [Attention is all you have](https://still.visualmode.dev/blogmarks/340) <sup>2026-09-22</sup>
+- [How To Write With An LLM](https://still.visualmode.dev/blogmarks/339) <sup>2026-09-21</sup>
+- [Fast Software, the Best Software](https://still.visualmode.dev/blogmarks/338) <sup>2026-09-20</sup>
+<!-- BLOGMARKS-END -->
+
+More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
+
 ### Top TIL Topics
 
 <!-- TIL-TOP-START -->

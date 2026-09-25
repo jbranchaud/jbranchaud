@@ -1,4 +1,4 @@
-name: Update latest TILs
+name: Update latest TILs and blogmarks
 
 on:
   schedule:
@@ -31,6 +31,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A README.md assets
           git diff --staged --quiet || {
-            git commit -m "chore: update latest TILs"
+            git commit -m "chore: update latest TILs and blogmarks"
             git push
           }
