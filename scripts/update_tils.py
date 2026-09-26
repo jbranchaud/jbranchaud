@@ -101,24 +101,24 @@ class Blogmark:
     tags: list[str]
 
 
+def git(repo: pathlib.Path, *args: str) -> str:
+    """Run a git command in `repo` and return its stdout."""
+    return subprocess.run(
+        ["git", "-C", str(repo), *args], capture_output=True, text=True, check=True
+    ).stdout
+
+
 def added_tils(til_dir: pathlib.Path, count: int) -> list[Til]:
     """Return the `count` most recently added TIL files, newest first."""
-    out = subprocess.run(
-        [
-            "git",
-            "-C",
-            str(til_dir),
-            "log",
-            "--diff-filter=A",
-            "--name-only",
-            "--pretty=format:%x00%aI",
-            "--",
-            "*/*.md",
-        ],
-        capture_output=True,
-        text=True,
-        check=True,
-    ).stdout
+    out = git(
+        til_dir,
+        "log",
+        "--diff-filter=A",
+        "--name-only",
+        "--pretty=format:%x00%aI",
+        "--",
+        "*/*.md",
+    )
 
     results: list[Til] = []
     date = datetime.date.min
@@ -143,12 +143,7 @@ def added_tils(til_dir: pathlib.Path, count: int) -> list[Til]:
 
 def til_paths(til_dir: pathlib.Path) -> list[str]:
     """Every TIL file, matching the `*/*.md` shape used for discovery."""
-    out = subprocess.run(
-        ["git", "-C", str(til_dir), "ls-files", "*/*.md"],
-        capture_output=True,
-        text=True,
-        check=True,
-    ).stdout
+    out = git(til_dir, "ls-files", "*/*.md")
     return [line for line in out.splitlines() if line.strip()]
 
 
