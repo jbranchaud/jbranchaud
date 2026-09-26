@@ -10,6 +10,8 @@ from __future__ import annotations
 
 import argparse
 import collections
+import dataclasses
+import datetime
 import pathlib
 import re
 import shutil
@@ -53,49 +55,87 @@ BRAND = {
 }
 BRAND_FALLBACK = "#6E7781"
 
-# (background, border, label, count) per README color scheme.
+
+@dataclasses.dataclass(frozen=True)
+class Theme:
+    """Tile colors for one README color scheme."""
+
+    background: str
+    border: str
+    label: str
+    count: str
+
+
 THEMES = {
-    "light": ("#F6F8FA", "#D0D7DE", "#57606A", "#1F2328"),
-    "dark": ("#161B22", "#30363D", "#8B949E", "#E6EDF3"),
+    "light": Theme("#F6F8FA", "#D0D7DE", "#57606A", "#1F2328"),
+    "dark": Theme("#161B22", "#30363D", "#8B949E", "#E6EDF3"),
 }
 TILE_W, TILE_H = 132, 52
 
 
-def added_tils(til_dir: pathlib.Path, count: int) -> list[tuple[str, str]]:
-    """Return [(path, iso_date)] for the `count` most recently added TIL files."""
-    out = subprocess.run(
-        [
-            "git",
-            "-C",
-            str(til_dir),
-            "log",
-            "--diff-filter=A",
-            "--name-only",
-            "--pretty=format:%x00%aI",
-            "--",
-            "*/*.md",
-        ],
-        capture_output=True,
-        text=True,
-        check=True,
+@dataclasses.dataclass(frozen=True)
+class Til:
+    path: str
+    added: datetime.date
+
+    @property
+    def category(self) -> str:
+        return self.path.split("/", 1)[0]
+
+    @property
+    def url(self) -> str:
+        return f"{TIL_REPO_URL}/blob/{TIL_BRANCH}/{self.path}"
+
+
+@dataclasses.dataclass(frozen=True)
+class TopicCount:
+    category: str
+    count: int
+
+
+@dataclasses.dataclass(frozen=True)
+class Blogmark:
+    title: str
+    url: str
+    published: datetime.datetime
+    tags: list[str]
+
+
+def git(repo: pathlib.Path, *args: str) -> str:
+    """Run a git command in `repo` and return its stdout."""
+    return subprocess.run(
+        ["git", "-C", str(repo), *args], capture_output=True, text=True, check=True
     ).stdout
 
-    results: list[tuple[str, str]] = []
-    date = ""
+
+def added_tils(til_dir: pathlib.Path, count: int) -> list[Til]:
+    """Return the `count` most recently added TIL files, newest first."""
+    out = git(
+        til_dir,
+        "log",
+        "--diff-filter=A",
+        "--name-only",
+        "--pretty=format:%x00%aI",
+        "--",
+        "*/*.md",
+    )
+
+    results: list[Til] = []
+    date = datetime.date.min
     for line in out.splitlines():
         if line.startswith("\x00"):
-            date = line[1:]
+            date = datetime.datetime.fromisoformat(line[1:]).date()
             continue
         path = line.strip()
         if not path:
             continue
         # A file can be added, deleted, then re-added; keep the newest entry.
-        if any(path == p for p, _ in results):
+        if any(path == til.path for til in results):
             continue
         # Skip files that no longer exist (renamed or deleted since).
         if not (til_dir / path).is_file():
             continue
-        results.append((path, date))
+        results.append(Til(path, date))
         if len(results) == count:
             break
     return results
@@ -103,23 +143,18 @@ def added_tils(til_dir: pathlib.Path, count: int) -> list[tuple[str, str]]:
 
 def til_paths(til_dir: pathlib.Path) -> list[str]:
     """Every TIL file, matching the `*/*.md` shape used for discovery."""
-    out = subprocess.run(
-        ["git", "-C", str(til_dir), "ls-files", "*/*.md"],
-        capture_output=True,
-        text=True,
-        check=True,
-    ).stdout
+    out = git(til_dir, "ls-files", "*/*.md")
     return [line for line in out.splitlines() if line.strip()]
 
 
-def top_categories(paths: list[str], count: int) -> list[tuple[str, int]]:
-    """Return [(category, til_count)] for the `count` biggest directories.
+def top_categories(paths: list[str], count: int) -> list[TopicCount]:
+    """Return the `count` biggest TIL directories.
 
     Ties break alphabetically so the order only moves when the numbers do.
     """
     counts = collections.Counter(path.split("/", 1)[0] for path in paths)
     ranked = sorted(counts.items(), key=lambda item: (-item[1], item[0]))
-    return ranked[:count]
+    return [TopicCount(category, n) for category, n in ranked[:count]]
 
 
 def title_for(til_dir: pathlib.Path, path: str) -> str:
@@ -129,48 +164,61 @@ def title_for(til_dir: pathlib.Path, path: str) -> str:
     return pathlib.Path(path).stem.replace("-", " ").title()
 
 
-def render(til_dir: pathlib.Path, entries: list[tuple[str, str]]) -> str:
-    lines = []
-    for path, date in entries:
-        category = path.split("/", 1)[0]
-        url = f"{TIL_REPO_URL}/blob/{TIL_BRANCH}/{path}"
-        lines.append(
-            f"- [{title_for(til_dir, path)}]({url}) "
-            f"<sup>`{category}` · {date[:10]}</sup>"
-        )
-    return "\n".join(lines)
+def link_item(title: str, url: str, tags: list[str], date: datetime.date) -> str:
+    """One README list line: linked title, then tags and date in small text."""
+    # Brackets in titles would break the markdown link.
+    title = title.replace("[", "\\[").replace("]", "\\]")
+    meta = " ".join(f"`{tag}`" for tag in tags)
+    meta = f"{meta} · {date.isoformat()}" if meta else date.isoformat()
+    return f"- [{title}]({url}) <sup>{meta}</sup>"
 
 
-def latest_blogmarks(url: str, count: int) -> list[tuple[str, str, str]]:
-    """Return [(title, link, iso_date)] for the `count` newest feed entries."""
+def render(til_dir: pathlib.Path, tils: list[Til]) -> str:
+    return "\n".join(
+        link_item(title_for(til_dir, til.path), til.url, [til.category], til.added)
+        for til in tils
+    )
+
+
+def fetch_feed(url: str) -> bytes:
     request = urllib.request.Request(url, headers={"User-Agent": "jbranchaud-readme"})
     with urllib.request.urlopen(request, timeout=30) as response:
-        root = ET.fromstring(response.read())
-
-    results = []
-    for entry in root.iter(f"{ATOM}entry"):
-        link = entry.find(f"{ATOM}link[@rel='alternate']")
-        if link is None:
-            link = entry.find(f"{ATOM}link")
-        date = entry.findtext(f"{ATOM}published") or entry.findtext(f"{ATOM}updated", "")
-        title = (entry.findtext(f"{ATOM}title") or "").strip()
-        results.append((title, link.get("href", "") if link is not None else "", date))
-    results.sort(key=lambda item: item[2], reverse=True)
-    return results[:count]
+        return response.read()
 
 
-def render_blogmarks(entries: list[tuple[str, str, str]]) -> str:
-    lines = []
-    for title, link, date in entries:
-        # Brackets in titles would break the markdown link.
-        title = title.replace("[", "\\[").replace("]", "\\]")
-        lines.append(f"- [{title}]({link}) <sup>{date[:10]}</sup>")
-    return "\n".join(lines)
+def parse_entry(entry: ET.Element) -> Blogmark:
+    """One Atom <entry>, preferring the alternate link and published stamp."""
+    link = entry.find(f"{ATOM}link[@rel='alternate']")
+    if link is None:
+        link = entry.find(f"{ATOM}link")
+    stamp = entry.findtext(f"{ATOM}published") or entry.findtext(f"{ATOM}updated", "")
+    return Blogmark(
+        title=(entry.findtext(f"{ATOM}title") or "").strip(),
+        url=link.get("href", "") if link is not None else "",
+        published=datetime.datetime.fromisoformat(stamp),
+        tags=[
+            category.get("term")
+            for category in entry.findall(f"{ATOM}category")
+            if category.get("term")
+        ],
+    )
 
 
-def tile_svg(category: str, count: int, theme: str) -> str:
+def parse_blogmarks(feed: bytes, count: int) -> list[Blogmark]:
+    """Return the `count` newest feed entries, newest first."""
+    entries = [parse_entry(entry) for entry in ET.fromstring(feed).iter(f"{ATOM}entry")]
+    entries.sort(key=lambda blogmark: blogmark.published, reverse=True)
+    return entries[:count]
+
+
+def render_blogmarks(blogmarks: list[Blogmark]) -> str:
+    return "\n".join(
+        link_item(b.title, b.url, b.tags, b.published.date()) for b in blogmarks
+    )
+
+
+def tile_svg(category: str, count: int, theme: Theme) -> str:
     """One name plate: brand-colored edge, category label, count as numeral."""
-    background, border, label_fill, count_fill = THEMES[theme]
     accent = BRAND.get(category, BRAND_FALLBACK)
     label = saxutils.escape(category.upper())
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{TILE_W}" \
@@ -180,22 +228,22 @@ aria-label="{label}: {count} TILs">
     <rect x="0" y="0" width="{TILE_W}" height="{TILE_H}" rx="8"/>
   </clipPath>
   <g clip-path="url(#card)">
-    <rect x="0" y="0" width="{TILE_W}" height="{TILE_H}" fill="{background}"/>
+    <rect x="0" y="0" width="{TILE_W}" height="{TILE_H}" fill="{theme.background}"/>
     <rect x="0" y="0" width="4" height="{TILE_H}" fill="{accent}"/>
   </g>
   <rect x="0.5" y="0.5" width="{TILE_W - 1}" height="{TILE_H - 1}" rx="7.5"
-        fill="none" stroke="{border}"/>
+        fill="none" stroke="{theme.border}"/>
   <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
     <text x="17" y="21" font-size="10.5" letter-spacing="0.7"
-          fill="{label_fill}">{label}</text>
+          fill="{theme.label}">{label}</text>
     <text x="17" y="42" font-size="19" font-weight="600"
-          fill="{count_fill}">{count:,}</text>
+          fill="{theme.count}">{count:,}</text>
   </g>
 </svg>
 """
 
 
-def render_tiles(entries: list[tuple[str, int]], assets: pathlib.Path) -> str:
+def render_tiles(topics: list[TopicCount], assets: pathlib.Path) -> str:
     """Write a light/dark SVG pair per category, return the linked markup.
 
     The count rides in the filename so GitHub's image proxy can't serve a
@@ -205,14 +253,15 @@ def render_tiles(entries: list[tuple[str, int]], assets: pathlib.Path) -> str:
     assets.mkdir(parents=True, exist_ok=True)
 
     lines = []
-    for category, count in entries:
+    for topic in topics:
+        category, count = topic.category, topic.count
         paths = {}
-        for theme in THEMES:
-            name = f"{category}-{count}-{theme}.svg"
+        for theme_name, theme in THEMES.items():
+            name = f"{category}-{count}-{theme_name}.svg"
             (assets / name).write_text(
                 tile_svg(category, count, theme), encoding="utf-8"
             )
-            paths[theme] = f"{assets.as_posix()}/{name}"
+            paths[theme_name] = f"{assets.as_posix()}/{name}"
         lines.append(
             f'<a href="{TIL_REPO_URL}/tree/{TIL_BRANCH}/{category}">'
             f"<picture>"
@@ -234,6 +283,34 @@ def splice(text: str, markers: tuple[str, str], body: str, inline: bool = False)
     return pattern.sub(lambda _: f"{start}{sep}{body}{sep}{end}", text)
 
 
+def update_latest_tils(readme: str, til_dir: pathlib.Path, count: int) -> str:
+    tils = added_tils(til_dir, count)
+    if not tils:
+        sys.exit("error: no TILs found")
+    return splice(readme, LIST_MARKERS, render(til_dir, tils))
+
+
+def update_topics(
+    readme: str, til_dir: pathlib.Path, top: int, assets: pathlib.Path
+) -> str:
+    """Total TIL count plus a tile per top category."""
+    paths = til_paths(til_dir)
+    readme = splice(readme, COUNT_MARKERS, f"{len(paths):,}", inline=True)
+    return splice(readme, TOP_MARKERS, render_tiles(top_categories(paths, top), assets))
+
+
+def update_blogmarks(readme: str, feed_url: str, count: int) -> str:
+    """A flaky feed shouldn't block the TIL update; keep the last good list."""
+    try:
+        blogmarks = parse_blogmarks(fetch_feed(feed_url), count)
+    except Exception as error:  # noqa: BLE001
+        print(f"warning: skipping blogmarks: {error}", file=sys.stderr)
+        return readme
+    if not blogmarks:
+        return readme
+    return splice(readme, BLOGMARK_MARKERS, render_blogmarks(blogmarks))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--til-dir", default="til-repo", type=pathlib.Path)
@@ -244,35 +321,16 @@ def main() -> None:
     parser.add_argument("--feed", default=BLOGMARK_FEED_URL)
     args = parser.parse_args()
 
-    entries = added_tils(args.til_dir, args.count)
-    if not entries:
-        sys.exit("error: no TILs found")
-
-    paths = til_paths(args.til_dir)
     original = args.readme.read_text(encoding="utf-8")
-    updated = splice(original, LIST_MARKERS, render(args.til_dir, entries))
-    updated = splice(updated, COUNT_MARKERS, f"{len(paths):,}", inline=True)
-    updated = splice(
-        updated,
-        TOP_MARKERS,
-        render_tiles(top_categories(paths, args.top), args.assets),
-    )
-
-    # A flaky feed shouldn't block the TIL update; keep the last good list.
-    try:
-        blogmarks = latest_blogmarks(args.feed, args.count)
-    except Exception as error:  # noqa: BLE001
-        print(f"warning: skipping blogmarks: {error}", file=sys.stderr)
-        blogmarks = []
-    if blogmarks:
-        updated = splice(updated, BLOGMARK_MARKERS, render_blogmarks(blogmarks))
+    updated = update_latest_tils(original, args.til_dir, args.count)
+    updated = update_topics(updated, args.til_dir, args.top, args.assets)
+    updated = update_blogmarks(updated, args.feed, args.count)
 
     if updated == original:
         print("no changes")
         return
     args.readme.write_text(updated, encoding="utf-8")
     print("README updated")
-
 
 if __name__ == "__main__":
     main()
