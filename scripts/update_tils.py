@@ -185,26 +185,35 @@ def render(til_dir: pathlib.Path, tils: list[Til]) -> str:
     )
 
 
-def latest_blogmarks(url: str, count: int) -> list[Blogmark]:
-    """Return the `count` newest feed entries, newest first."""
+def fetch_feed(url: str) -> bytes:
     request = urllib.request.Request(url, headers={"User-Agent": "jbranchaud-readme"})
     with urllib.request.urlopen(request, timeout=30) as response:
-        root = ET.fromstring(response.read())
+        return response.read()
 
-    results = []
-    for entry in root.iter(f"{ATOM}entry"):
-        link = entry.find(f"{ATOM}link[@rel='alternate']")
-        if link is None:
-            link = entry.find(f"{ATOM}link")
-        stamp = entry.findtext(f"{ATOM}published") or entry.findtext(f"{ATOM}updated", "")
-        title = (entry.findtext(f"{ATOM}title") or "").strip()
-        tags = [c.get("term", "") for c in entry.findall(f"{ATOM}category") if c.get("term")]
-        href = link.get("href", "") if link is not None else ""
-        results.append(
-            Blogmark(title, href, datetime.datetime.fromisoformat(stamp), tags)
-        )
-    results.sort(key=lambda blogmark: blogmark.published, reverse=True)
-    return results[:count]
+
+def parse_entry(entry: ET.Element) -> Blogmark:
+    """One Atom <entry>, preferring the alternate link and published stamp."""
+    link = entry.find(f"{ATOM}link[@rel='alternate']")
+    if link is None:
+        link = entry.find(f"{ATOM}link")
+    stamp = entry.findtext(f"{ATOM}published") or entry.findtext(f"{ATOM}updated", "")
+    return Blogmark(
+        title=(entry.findtext(f"{ATOM}title") or "").strip(),
+        url=link.get("href", "") if link is not None else "",
+        published=datetime.datetime.fromisoformat(stamp),
+        tags=[
+            category.get("term")
+            for category in entry.findall(f"{ATOM}category")
+            if category.get("term")
+        ],
+    )
+
+
+def parse_blogmarks(feed: bytes, count: int) -> list[Blogmark]:
+    """Return the `count` newest feed entries, newest first."""
+    entries = [parse_entry(entry) for entry in ET.fromstring(feed).iter(f"{ATOM}entry")]
+    entries.sort(key=lambda blogmark: blogmark.published, reverse=True)
+    return entries[:count]
 
 
 def render_blogmarks(blogmarks: list[Blogmark]) -> str:
@@ -305,7 +314,7 @@ def main() -> None:
 
     # A flaky feed shouldn't block the TIL update; keep the last good list.
     try:
-        blogmarks = latest_blogmarks(args.feed, args.count)
+        blogmarks = parse_blogmarks(fetch_feed(args.feed), args.count)
     except Exception as error:  # noqa: BLE001
         print(f"warning: skipping blogmarks: {error}", file=sys.stderr)
         blogmarks = []
