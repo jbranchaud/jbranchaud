@@ -169,14 +169,20 @@ def title_for(til_dir: pathlib.Path, path: str) -> str:
     return pathlib.Path(path).stem.replace("-", " ").title()
 
 
+def link_item(title: str, url: str, tags: list[str], date: datetime.date) -> str:
+    """One README list line: linked title, then tags and date in small text."""
+    # Brackets in titles would break the markdown link.
+    title = title.replace("[", "\\[").replace("]", "\\]")
+    meta = " ".join(f"`{tag}`" for tag in tags)
+    meta = f"{meta} · {date.isoformat()}" if meta else date.isoformat()
+    return f"- [{title}]({url}) <sup>{meta}</sup>"
+
+
 def render(til_dir: pathlib.Path, tils: list[Til]) -> str:
-    lines = []
-    for til in tils:
-        lines.append(
-            f"- [{title_for(til_dir, til.path)}]({til.url}) "
-            f"<sup>`{til.category}` · {til.added.isoformat()}</sup>"
-        )
-    return "\n".join(lines)
+    return "\n".join(
+        link_item(title_for(til_dir, til.path), til.url, [til.category], til.added)
+        for til in tils
+    )
 
 
 def latest_blogmarks(url: str, count: int) -> list[Blogmark]:
@@ -202,15 +208,9 @@ def latest_blogmarks(url: str, count: int) -> list[Blogmark]:
 
 
 def render_blogmarks(blogmarks: list[Blogmark]) -> str:
-    lines = []
-    for blogmark in blogmarks:
-        # Brackets in titles would break the markdown link.
-        title = blogmark.title.replace("[", "\\[").replace("]", "\\]")
-        meta = " ".join(f"`{tag}`" for tag in blogmark.tags)
-        date = blogmark.published.date().isoformat()
-        meta = f"{meta} · {date}" if meta else date
-        lines.append(f"- [{title}]({blogmark.url}) <sup>{meta}</sup>")
-    return "\n".join(lines)
+    return "\n".join(
+        link_item(b.title, b.url, b.tags, b.published.date()) for b in blogmarks
+    )
 
 
 def tile_svg(category: str, count: int, theme: Theme) -> str:
