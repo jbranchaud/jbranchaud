@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import collections
 import dataclasses
+import datetime
 import pathlib
 import re
 import shutil
@@ -75,7 +76,7 @@ TILE_W, TILE_H = 132, 52
 @dataclasses.dataclass(frozen=True)
 class Til:
     path: str
-    added: str
+    added: datetime.date
 
     @property
     def category(self) -> str:
@@ -96,7 +97,7 @@ class TopicCount:
 class Blogmark:
     title: str
     url: str
-    published: str
+    published: datetime.datetime
     tags: list[str]
 
 
@@ -120,10 +121,10 @@ def added_tils(til_dir: pathlib.Path, count: int) -> list[Til]:
     ).stdout
 
     results: list[Til] = []
-    date = ""
+    date = datetime.date.min
     for line in out.splitlines():
         if line.startswith("\x00"):
-            date = line[1:]
+            date = datetime.datetime.fromisoformat(line[1:]).date()
             continue
         path = line.strip()
         if not path:
@@ -173,7 +174,7 @@ def render(til_dir: pathlib.Path, tils: list[Til]) -> str:
     for til in tils:
         lines.append(
             f"- [{title_for(til_dir, til.path)}]({til.url}) "
-            f"<sup>`{til.category}` · {til.added[:10]}</sup>"
+            f"<sup>`{til.category}` · {til.added.isoformat()}</sup>"
         )
     return "\n".join(lines)
 
@@ -189,11 +190,13 @@ def latest_blogmarks(url: str, count: int) -> list[Blogmark]:
         link = entry.find(f"{ATOM}link[@rel='alternate']")
         if link is None:
             link = entry.find(f"{ATOM}link")
-        date = entry.findtext(f"{ATOM}published") or entry.findtext(f"{ATOM}updated", "")
+        stamp = entry.findtext(f"{ATOM}published") or entry.findtext(f"{ATOM}updated", "")
         title = (entry.findtext(f"{ATOM}title") or "").strip()
         tags = [c.get("term", "") for c in entry.findall(f"{ATOM}category") if c.get("term")]
         href = link.get("href", "") if link is not None else ""
-        results.append(Blogmark(title, href, date, tags))
+        results.append(
+            Blogmark(title, href, datetime.datetime.fromisoformat(stamp), tags)
+        )
     results.sort(key=lambda blogmark: blogmark.published, reverse=True)
     return results[:count]
 
@@ -204,7 +207,7 @@ def render_blogmarks(blogmarks: list[Blogmark]) -> str:
         # Brackets in titles would break the markdown link.
         title = blogmark.title.replace("[", "\\[").replace("]", "\\]")
         meta = " ".join(f"`{tag}`" for tag in blogmark.tags)
-        date = blogmark.published[:10]
+        date = blogmark.published.date().isoformat()
         meta = f"{meta} · {date}" if meta else date
         lines.append(f"- [{title}]({blogmark.url}) <sup>{meta}</sup>")
     return "\n".join(lines)
