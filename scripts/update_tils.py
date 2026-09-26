@@ -283,6 +283,34 @@ def splice(text: str, markers: tuple[str, str], body: str, inline: bool = False)
     return pattern.sub(lambda _: f"{start}{sep}{body}{sep}{end}", text)
 
 
+def update_latest_tils(readme: str, til_dir: pathlib.Path, count: int) -> str:
+    tils = added_tils(til_dir, count)
+    if not tils:
+        sys.exit("error: no TILs found")
+    return splice(readme, LIST_MARKERS, render(til_dir, tils))
+
+
+def update_topics(
+    readme: str, til_dir: pathlib.Path, top: int, assets: pathlib.Path
+) -> str:
+    """Total TIL count plus a tile per top category."""
+    paths = til_paths(til_dir)
+    readme = splice(readme, COUNT_MARKERS, f"{len(paths):,}", inline=True)
+    return splice(readme, TOP_MARKERS, render_tiles(top_categories(paths, top), assets))
+
+
+def update_blogmarks(readme: str, feed_url: str, count: int) -> str:
+    """A flaky feed shouldn't block the TIL update; keep the last good list."""
+    try:
+        blogmarks = parse_blogmarks(fetch_feed(feed_url), count)
+    except Exception as error:  # noqa: BLE001
+        print(f"warning: skipping blogmarks: {error}", file=sys.stderr)
+        return readme
+    if not blogmarks:
+        return readme
+    return splice(readme, BLOGMARK_MARKERS, render_blogmarks(blogmarks))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--til-dir", default="til-repo", type=pathlib.Path)
@@ -293,35 +321,16 @@ def main() -> None:
     parser.add_argument("--feed", default=BLOGMARK_FEED_URL)
     args = parser.parse_args()
 
-    tils = added_tils(args.til_dir, args.count)
-    if not tils:
-        sys.exit("error: no TILs found")
-
-    paths = til_paths(args.til_dir)
     original = args.readme.read_text(encoding="utf-8")
-    updated = splice(original, LIST_MARKERS, render(args.til_dir, tils))
-    updated = splice(updated, COUNT_MARKERS, f"{len(paths):,}", inline=True)
-    updated = splice(
-        updated,
-        TOP_MARKERS,
-        render_tiles(top_categories(paths, args.top), args.assets),
-    )
-
-    # A flaky feed shouldn't block the TIL update; keep the last good list.
-    try:
-        blogmarks = parse_blogmarks(fetch_feed(args.feed), args.count)
-    except Exception as error:  # noqa: BLE001
-        print(f"warning: skipping blogmarks: {error}", file=sys.stderr)
-        blogmarks = []
-    if blogmarks:
-        updated = splice(updated, BLOGMARK_MARKERS, render_blogmarks(blogmarks))
+    updated = update_latest_tils(original, args.til_dir, args.count)
+    updated = update_topics(updated, args.til_dir, args.top, args.assets)
+    updated = update_blogmarks(updated, args.feed, args.count)
 
     if updated == original:
         print("no changes")
         return
     args.readme.write_text(updated, encoding="utf-8")
     print("README updated")
-
 
 if __name__ == "__main__":
     main()
