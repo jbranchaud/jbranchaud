@@ -141,8 +141,8 @@ def render(til_dir: pathlib.Path, entries: list[tuple[str, str]]) -> str:
     return "\n".join(lines)
 
 
-def latest_blogmarks(url: str, count: int) -> list[tuple[str, str, str]]:
-    """Return [(title, link, iso_date)] for the `count` newest feed entries."""
+def latest_blogmarks(url: str, count: int) -> list[tuple[str, str, str, list[str]]]:
+    """Return [(title, link, iso_date, tags)] for the `count` newest feed entries."""
     request = urllib.request.Request(url, headers={"User-Agent": "jbranchaud-readme"})
     with urllib.request.urlopen(request, timeout=30) as response:
         root = ET.fromstring(response.read())
@@ -154,17 +154,20 @@ def latest_blogmarks(url: str, count: int) -> list[tuple[str, str, str]]:
             link = entry.find(f"{ATOM}link")
         date = entry.findtext(f"{ATOM}published") or entry.findtext(f"{ATOM}updated", "")
         title = (entry.findtext(f"{ATOM}title") or "").strip()
-        results.append((title, link.get("href", "") if link is not None else "", date))
+        tags = [c.get("term", "") for c in entry.findall(f"{ATOM}category") if c.get("term")]
+        results.append((title, link.get("href", "") if link is not None else "", date, tags))
     results.sort(key=lambda item: item[2], reverse=True)
     return results[:count]
 
 
-def render_blogmarks(entries: list[tuple[str, str, str]]) -> str:
+def render_blogmarks(entries: list[tuple[str, str, str, list[str]]]) -> str:
     lines = []
-    for title, link, date in entries:
+    for title, link, date, tags in entries:
         # Brackets in titles would break the markdown link.
         title = title.replace("[", "\\[").replace("]", "\\]")
-        lines.append(f"- [{title}]({link}) <sup>{date[:10]}</sup>")
+        meta = " ".join(f"`{tag}`" for tag in tags)
+        meta = f"{meta} · {date[:10]}" if meta else date[:10]
+        lines.append(f"- [{title}]({link}) <sup>{meta}</sup>")
     return "\n".join(lines)
 
 
