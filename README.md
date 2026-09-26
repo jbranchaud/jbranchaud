@@ -12,18 +12,6 @@
 
 I've written <!-- TIL-COUNT-START -->1,882<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
-## Latest Blogmarks
-
-<!-- BLOGMARKS-START -->
-- [Coding agents make software engineering harder](https://still.visualmode.dev/blogmarks/343) <sup>2026-09-25</sup>
-- [10x the learning per feature](https://still.visualmode.dev/blogmarks/342) <sup>2026-09-23</sup>
-- [Introducing System One Models & Jev](https://still.visualmode.dev/blogmarks/341) <sup>2026-09-23</sup>
-- [Attention is all you have](https://still.visualmode.dev/blogmarks/340) <sup>2026-09-22</sup>
-- [How To Write With An LLM](https://still.visualmode.dev/blogmarks/339) <sup>2026-09-21</sup>
-<!-- BLOGMARKS-END -->
-
-More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
-
 ### Top TIL Topics
 
 <!-- TIL-TOP-START -->
@@ -38,3 +26,15 @@ More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks)
 <a href="https://github.com/jbranchaud/til/tree/master/react"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/react-57-dark.svg"><img alt="react: 57 TILs" src="assets/tiles/react-57-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/elixir"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/elixir-52-dark.svg"><img alt="elixir: 52 TILs" src="assets/tiles/elixir-52-light.svg"></picture></a>
 <!-- TIL-TOP-END -->
+
+## Latest Blogmarks
+
+<!-- BLOGMARKS-START -->
+- [Coding agents make software engineering harder](https://still.visualmode.dev/blogmarks/343) <sup>2026-09-25</sup>
+- [10x the learning per feature](https://still.visualmode.dev/blogmarks/342) <sup>2026-09-23</sup>
+- [Introducing System One Models & Jev](https://still.visualmode.dev/blogmarks/341) <sup>2026-09-23</sup>
+- [Attention is all you have](https://still.visualmode.dev/blogmarks/340) <sup>2026-09-22</sup>
+- [How To Write With An LLM](https://still.visualmode.dev/blogmarks/339) <sup>2026-09-21</sup>
+<!-- BLOGMARKS-END -->
+
+More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
