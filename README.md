@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Translate To Canonical Tags With Small Model](https://github.com/jbranchaud/til/blob/master/llm/translate-to-canonical-tags-with-small-model.md) <sup>`llm` · 2026-09-27</sup>
 - [Summarize Amount Of Change For Specific Commit](https://github.com/jbranchaud/til/blob/master/git/summarize-amount-of-change-for-specific-commit.md) <sup>`git` · 2026-09-23</sup>
 - [Format Amount As Currency](https://github.com/jbranchaud/til/blob/master/rails/format-amount-as-currency.md) <sup>`rails` · 2026-09-18</sup>
 - [Run Python Tools With `uvx`](https://github.com/jbranchaud/til/blob/master/python/run-python-tools-with-uvx.md) <sup>`python` · 2026-09-09</sup>
 - [Use Claude Code From Multiple Accounts](https://github.com/jbranchaud/til/blob/master/claude-code/use-claude-code-from-multiple-accounts.md) <sup>`claude-code` · 2026-09-08</sup>
-- [Generate Image Alt Text Across Various Claude Models](https://github.com/jbranchaud/til/blob/master/llm/generate-image-alt-text-across-claude-models.md) <sup>`llm` · 2026-09-07</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,882<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,883<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,882<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [the senior engineer death spiral](https://still.visualmode.dev/blogmarks/345) <sup>`career` `software-development` · 2026-09-28</sup>
+- [Developing a tagging scheme for my posts using facets](https://still.visualmode.dev/blogmarks/344) <sup>`categorization` `llm` · 2026-09-28</sup>
 - [Coding agents make software engineering harder](https://still.visualmode.dev/blogmarks/343) <sup>`software-development` `ai-assisted-coding` · 2026-09-25</sup>
 - [10x the learning per feature](https://still.visualmode.dev/blogmarks/342) <sup>`product-design` `ai-assisted-coding` · 2026-09-23</sup>
 - [Introducing System One Models & Jev](https://still.visualmode.dev/blogmarks/341) <sup>`jev` `typesafe-ai` `decision-models` `system-one-models` · 2026-09-23</sup>
-- [Attention is all you have](https://still.visualmode.dev/blogmarks/340) <sup>`internet` `blogging` `attention` `llm-research` · 2026-09-22</sup>
-- [How To Write With An LLM](https://still.visualmode.dev/blogmarks/339) <sup>`writing` `llm` · 2026-09-21</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
