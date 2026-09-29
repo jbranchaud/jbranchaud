@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,883<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [On "Deep Lessons We Don't Need to Pass Down Anymore"](https://still.visualmode.dev/blogmarks/346) <sup>`rewrite` `conventional-wisdom` `software-development` · 2026-09-28</sup>
 - [the senior engineer death spiral](https://still.visualmode.dev/blogmarks/345) <sup>`career` `software-development` · 2026-09-28</sup>
 - [Developing a tagging scheme for my posts using facets](https://still.visualmode.dev/blogmarks/344) <sup>`categorization` `llm` · 2026-09-28</sup>
 - [Coding agents make software engineering harder](https://still.visualmode.dev/blogmarks/343) <sup>`software-development` `ai-assisted-coding` · 2026-09-25</sup>
 - [10x the learning per feature](https://still.visualmode.dev/blogmarks/342) <sup>`product-design` `ai-assisted-coding` · 2026-09-23</sup>
-- [Introducing System One Models & Jev](https://still.visualmode.dev/blogmarks/341) <sup>`jev` `typesafe-ai` `decision-models` `system-one-models` · 2026-09-23</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
