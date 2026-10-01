@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Ask An Agent To Fix Merge Conflicts](https://github.com/jbranchaud/til/blob/master/claude-code/ask-an-agent-to-fix-merge-conflicts.md) <sup>`claude-code` · 2026-09-30</sup>
 - [Translate To Canonical Tags With Small Model](https://github.com/jbranchaud/til/blob/master/llm/translate-to-canonical-tags-with-small-model.md) <sup>`llm` · 2026-09-27</sup>
 - [Summarize Amount Of Change For Specific Commit](https://github.com/jbranchaud/til/blob/master/git/summarize-amount-of-change-for-specific-commit.md) <sup>`git` · 2026-09-23</sup>
 - [Format Amount As Currency](https://github.com/jbranchaud/til/blob/master/rails/format-amount-as-currency.md) <sup>`rails` · 2026-09-18</sup>
 - [Run Python Tools With `uvx`](https://github.com/jbranchaud/til/blob/master/python/run-python-tools-with-uvx.md) <sup>`python` · 2026-09-09</sup>
-- [Use Claude Code From Multiple Accounts](https://github.com/jbranchaud/til/blob/master/claude-code/use-claude-code-from-multiple-accounts.md) <sup>`claude-code` · 2026-09-08</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,883<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,884<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,883<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- ["Just Spit It Out"](https://still.visualmode.dev/blogmarks/349) <sup>`writing` · 2026-10-01</sup>
+- [What good is a commit message?](https://still.visualmode.dev/blogmarks/348) <sup>`git` `writing` `software-development` · 2026-09-30</sup>
+- [Ask an LLM to anonymize command output or code snippets](https://still.visualmode.dev/blogmarks/347) <sup>`writing` `llm` · 2026-09-30</sup>
 - [On "Deep Lessons We Don't Need to Pass Down Anymore"](https://still.visualmode.dev/blogmarks/346) <sup>`rewrite` `conventional-wisdom` `software-development` · 2026-09-28</sup>
 - [the senior engineer death spiral](https://still.visualmode.dev/blogmarks/345) <sup>`career` `software-development` · 2026-09-28</sup>
-- [Developing a tagging scheme for my posts using facets](https://still.visualmode.dev/blogmarks/344) <sup>`categorization` `llm` · 2026-09-28</sup>
-- [Coding agents make software engineering harder](https://still.visualmode.dev/blogmarks/343) <sup>`software-development` `ai-assisted-coding` · 2026-09-25</sup>
-- [10x the learning per feature](https://still.visualmode.dev/blogmarks/342) <sup>`product-design` `ai-assisted-coding` · 2026-09-23</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
