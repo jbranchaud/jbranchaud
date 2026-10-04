@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,884<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [On "Pair Programming as Agent Orchestrators"](https://still.visualmode.dev/blogmarks/351) <sup>`ai-assisted-coding` `pair-programming` `software-development` · 2026-10-04</sup>
 - [Another attempt at cutting back on LLM code comments](https://still.visualmode.dev/blogmarks/350) <sup>`claude-code` `ai-assisted-coding` · 2026-10-02</sup>
 - ["Just Spit It Out"](https://still.visualmode.dev/blogmarks/349) <sup>`writing` · 2026-10-01</sup>
 - [What good is a commit message?](https://still.visualmode.dev/blogmarks/348) <sup>`git` `writing` `software-development` · 2026-09-30</sup>
 - [Ask an LLM to anonymize command output or code snippets](https://still.visualmode.dev/blogmarks/347) <sup>`writing` `llm` · 2026-09-30</sup>
-- [On "Deep Lessons We Don't Need to Pass Down Anymore"](https://still.visualmode.dev/blogmarks/346) <sup>`rewrite` `conventional-wisdom` `software-development` · 2026-09-28</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
