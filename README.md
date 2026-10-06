@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Ensure Tooltips Appear In Screenshots](https://github.com/jbranchaud/til/blob/master/workflow/ensure-tooltips-appear-in-screenshots.md) <sup>`workflow` · 2026-10-04</sup>
+- [Build From My Phone In Cloud Environments](https://github.com/jbranchaud/til/blob/master/claude-code/build-from-my-phone-in-cloud-environments.md) <sup>`claude-code` · 2026-10-04</sup>
 - [Ask An Agent To Fix Merge Conflicts](https://github.com/jbranchaud/til/blob/master/claude-code/ask-an-agent-to-fix-merge-conflicts.md) <sup>`claude-code` · 2026-09-30</sup>
 - [Translate To Canonical Tags With Small Model](https://github.com/jbranchaud/til/blob/master/llm/translate-to-canonical-tags-with-small-model.md) <sup>`llm` · 2026-09-27</sup>
 - [Summarize Amount Of Change For Specific Commit](https://github.com/jbranchaud/til/blob/master/git/summarize-amount-of-change-for-specific-commit.md) <sup>`git` · 2026-09-23</sup>
-- [Format Amount As Currency](https://github.com/jbranchaud/til/blob/master/rails/format-amount-as-currency.md) <sup>`rails` · 2026-09-18</sup>
-- [Run Python Tools With `uvx`](https://github.com/jbranchaud/til/blob/master/python/run-python-tools-with-uvx.md) <sup>`python` · 2026-09-09</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,884<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,886<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
