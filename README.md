@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Pick Up Session Locally That Started In Cloud](https://github.com/jbranchaud/til/blob/master/claude-code/pick-up-session-locally-that-started-in-cloud.md) <sup>`claude-code` · 2026-10-11</sup>
 - [Set Repository Secret From CLI](https://github.com/jbranchaud/til/blob/master/github-actions/set-repository-secret-from-cli.md) <sup>`github-actions` · 2026-10-07</sup>
 - [Merge A Sequence Of Lines Of Output](https://github.com/jbranchaud/til/blob/master/unix/merge-a-sequence-of-lines-of-output.md) <sup>`unix` · 2026-10-06</sup>
 - [Ensure Tooltips Appear In Screenshots](https://github.com/jbranchaud/til/blob/master/workflow/ensure-tooltips-appear-in-screenshots.md) <sup>`workflow` · 2026-10-04</sup>
 - [Build From My Phone In Cloud Environments](https://github.com/jbranchaud/til/blob/master/claude-code/build-from-my-phone-in-cloud-environments.md) <sup>`claude-code` · 2026-10-04</sup>
-- [Ask An Agent To Fix Merge Conflicts](https://github.com/jbranchaud/til/blob/master/claude-code/ask-an-agent-to-fix-merge-conflicts.md) <sup>`claude-code` · 2026-09-30</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,888<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,889<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,888<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [JSON Lines](https://still.visualmode.dev/blogmarks/354) <sup>`json` · 2026-10-11</sup>
 - ["Start Here" pages](https://still.visualmode.dev/blogmarks/353) <sup>`internet` `blogging` · 2026-10-09</sup>
 - [Discard your assumptions often](https://still.visualmode.dev/blogmarks/352) <sup>`ai-assisted-coding` · 2026-10-07</sup>
 - [On "Pair Programming as Agent Orchestrators"](https://still.visualmode.dev/blogmarks/351) <sup>`ai-assisted-coding` `pair-programming` `software-development` · 2026-10-04</sup>
 - [Another attempt at cutting back on LLM code comments](https://still.visualmode.dev/blogmarks/350) <sup>`claude-code` `ai-assisted-coding` · 2026-10-02</sup>
-- ["Just Spit It Out"](https://still.visualmode.dev/blogmarks/349) <sup>`writing` · 2026-10-01</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
