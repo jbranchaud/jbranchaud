@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,889<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [Fencepost Error](https://still.visualmode.dev/blogmarks/355) <sup>`logic-error` `terminology` · 2026-10-13</sup>
 - [JSON Lines](https://still.visualmode.dev/blogmarks/354) <sup>`json` · 2026-10-11</sup>
 - ["Start Here" pages](https://still.visualmode.dev/blogmarks/353) <sup>`internet` `blogging` · 2026-10-09</sup>
 - [Discard your assumptions often](https://still.visualmode.dev/blogmarks/352) <sup>`ai-assisted-coding` · 2026-10-07</sup>
 - [On "Pair Programming as Agent Orchestrators"](https://still.visualmode.dev/blogmarks/351) <sup>`ai-assisted-coding` `pair-programming` `software-development` · 2026-10-04</sup>
-- [Another attempt at cutting back on LLM code comments](https://still.visualmode.dev/blogmarks/350) <sup>`claude-code` `ai-assisted-coding` · 2026-10-02</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
