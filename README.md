@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Rerun Failed Jobs For Current Branch](https://github.com/jbranchaud/til/blob/master/github/rerun-failed-jobs-for-current-branch.md) <sup>`github` · 2026-10-15</sup>
 - [Pick Up Session Locally That Started In Cloud](https://github.com/jbranchaud/til/blob/master/claude-code/pick-up-session-locally-that-started-in-cloud.md) <sup>`claude-code` · 2026-10-11</sup>
 - [Set Repository Secret From CLI](https://github.com/jbranchaud/til/blob/master/github-actions/set-repository-secret-from-cli.md) <sup>`github-actions` · 2026-10-07</sup>
 - [Merge A Sequence Of Lines Of Output](https://github.com/jbranchaud/til/blob/master/unix/merge-a-sequence-of-lines-of-output.md) <sup>`unix` · 2026-10-06</sup>
 - [Ensure Tooltips Appear In Screenshots](https://github.com/jbranchaud/til/blob/master/workflow/ensure-tooltips-appear-in-screenshots.md) <sup>`workflow` · 2026-10-04</sup>
-- [Build From My Phone In Cloud Environments](https://github.com/jbranchaud/til/blob/master/claude-code/build-from-my-phone-in-cloud-environments.md) <sup>`claude-code` · 2026-10-04</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,889<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,890<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
