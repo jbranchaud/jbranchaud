@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,890<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [Comfort Class Authoritarianism](https://still.visualmode.dev/blogmarks/358) <sup>`authoritarianism` `facial-recognition` · 2026-10-21</sup>
 - [Prompting for a Code Comment Reviewer prompt](https://still.visualmode.dev/blogmarks/357) <sup>`ai-assisted-coding` `code-comments` `adversarial-review` · 2026-10-18</sup>
 - [Adversarial Code Review: Why the Maker Shouldn't Grade the Checker](https://still.visualmode.dev/blogmarks/356) <sup>`ai-assisted-coding` `adversarial-review` · 2026-10-15</sup>
 - [Fencepost Error](https://still.visualmode.dev/blogmarks/355) <sup>`logic-error` `terminology` · 2026-10-13</sup>
 - [JSON Lines](https://still.visualmode.dev/blogmarks/354) <sup>`json` · 2026-10-11</sup>
-- ["Start Here" pages](https://still.visualmode.dev/blogmarks/353) <sup>`internet` `blogging` · 2026-10-09</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
