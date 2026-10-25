@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Create 1Password Login Item From The CLI](https://github.com/jbranchaud/til/blob/master/workflow/create-1password-login-item-from-the-cli.md) <sup>`workflow` · 2026-10-24</sup>
 - [Rerun Failed Jobs For Current Branch](https://github.com/jbranchaud/til/blob/master/github/rerun-failed-jobs-for-current-branch.md) <sup>`github` · 2026-10-15</sup>
 - [Pick Up Session Locally That Started In Cloud](https://github.com/jbranchaud/til/blob/master/claude-code/pick-up-session-locally-that-started-in-cloud.md) <sup>`claude-code` · 2026-10-11</sup>
 - [Set Repository Secret From CLI](https://github.com/jbranchaud/til/blob/master/github-actions/set-repository-secret-from-cli.md) <sup>`github-actions` · 2026-10-07</sup>
 - [Merge A Sequence Of Lines Of Output](https://github.com/jbranchaud/til/blob/master/unix/merge-a-sequence-of-lines-of-output.md) <sup>`unix` · 2026-10-06</sup>
-- [Ensure Tooltips Appear In Screenshots](https://github.com/jbranchaud/til/blob/master/workflow/ensure-tooltips-appear-in-screenshots.md) <sup>`workflow` · 2026-10-04</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,890<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,891<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,890<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [Generate embeddings for all my TIL posts](https://still.visualmode.dev/blogmarks/360) <sup>`llm` `embeddings` `pgvector` `meta-til` · 2026-10-24</sup>
 - [On "Preventing Paste for a 'Destructive Action' Confirmation Input"](https://still.visualmode.dev/blogmarks/359) <sup>`ux` `web-development` · 2026-10-22</sup>
 - [Comfort Class Authoritarianism](https://still.visualmode.dev/blogmarks/358) <sup>`authoritarianism` `facial-recognition` · 2026-10-21</sup>
 - [Prompting for a Code Comment Reviewer prompt](https://still.visualmode.dev/blogmarks/357) <sup>`ai-assisted-coding` `code-comments` `adversarial-review` · 2026-10-18</sup>
 - [Adversarial Code Review: Why the Maker Shouldn't Grade the Checker](https://still.visualmode.dev/blogmarks/356) <sup>`ai-assisted-coding` `adversarial-review` · 2026-10-15</sup>
-- [Fencepost Error](https://still.visualmode.dev/blogmarks/355) <sup>`logic-error` `terminology` · 2026-10-13</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
