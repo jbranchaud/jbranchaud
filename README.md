@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Show Full URLs With Print Styles](https://github.com/jbranchaud/til/blob/master/css/show-full-urls-with-print-styles.md) <sup>`css` · 2026-10-29</sup>
 - [Restart Process Managed By `process-compose`](https://github.com/jbranchaud/til/blob/master/unix/restart-process-managed-by-process-compose.md) <sup>`unix` · 2026-10-28</sup>
 - [Create A Private Repo From The CLI](https://github.com/jbranchaud/til/blob/master/github/create-a-private-repo-from-the-cli.md) <sup>`github` · 2026-10-28</sup>
 - [Create 1Password Login Item From The CLI](https://github.com/jbranchaud/til/blob/master/workflow/create-1password-login-item-from-the-cli.md) <sup>`workflow` · 2026-10-24</sup>
 - [Rerun Failed Jobs For Current Branch](https://github.com/jbranchaud/til/blob/master/github/rerun-failed-jobs-for-current-branch.md) <sup>`github` · 2026-10-15</sup>
-- [Pick Up Session Locally That Started In Cloud](https://github.com/jbranchaud/til/blob/master/claude-code/pick-up-session-locally-that-started-in-cloud.md) <sup>`claude-code` · 2026-10-11</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,893<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,894<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
