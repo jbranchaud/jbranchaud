@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Send Click To Another Window Without Losing Focus](https://github.com/jbranchaud/til/blob/master/mac/send-click-to-another-window-without-losing-focus.md) <sup>`mac` · 2026-11-03</sup>
 - [Access Daily Journal From CLI With HTTP Server](https://github.com/jbranchaud/til/blob/master/logseq/access-daily-journal-from-cli-with-http-server.md) <sup>`logseq` · 2026-10-31</sup>
 - [Show Full URLs With Print Styles](https://github.com/jbranchaud/til/blob/master/css/show-full-urls-with-print-styles.md) <sup>`css` · 2026-10-29</sup>
 - [Restart Process Managed By `process-compose`](https://github.com/jbranchaud/til/blob/master/unix/restart-process-managed-by-process-compose.md) <sup>`unix` · 2026-10-28</sup>
 - [Create A Private Repo From The CLI](https://github.com/jbranchaud/til/blob/master/github/create-a-private-repo-from-the-cli.md) <sup>`github` · 2026-10-28</sup>
-- [Create 1Password Login Item From The CLI](https://github.com/jbranchaud/til/blob/master/workflow/create-1password-login-item-from-the-cli.md) <sup>`workflow` · 2026-10-24</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,895<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,896<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
