@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Set Env Var With Dokku Without A Restart](https://github.com/jbranchaud/til/blob/master/devops/set-env-var-with-dokku-without-a-restart.md) <sup>`devops` · 2026-11-07</sup>
+- [Construct A File](https://github.com/jbranchaud/til/blob/master/jq/construct-a-file.md) <sup>`jq` · 2026-11-06</sup>
+- [Scope Fin MCP Calls To Authenticated Users](https://github.com/jbranchaud/til/blob/master/llm/scope-fin-mcp-calls-to-authenticated-users.md) <sup>`llm` · 2026-11-06</sup>
 - [Generate A Random Secret Value With OpenSSL](https://github.com/jbranchaud/til/blob/master/unix/generate-a-random-secret-value-with-openssl.md) <sup>`unix` · 2026-11-05</sup>
 - [Generate Text Embeddings With AWS Bedrock](https://github.com/jbranchaud/til/blob/master/llm/generate-text-embeddings-with-aws-bedrock.md) <sup>`llm` · 2026-11-04</sup>
-- [Print Out A Calendar For Current Year](https://github.com/jbranchaud/til/blob/master/python/print-out-a-calendar-for-current-year.md) <sup>`python` · 2026-11-04</sup>
-- [Check Properties Of An Image With `sips`](https://github.com/jbranchaud/til/blob/master/mac/check-properties-of-an-image-with-sips.md) <sup>`mac` · 2026-11-04</sup>
-- [Send Click To Another Window Without Losing Focus](https://github.com/jbranchaud/til/blob/master/mac/send-click-to-another-window-without-losing-focus.md) <sup>`mac` · 2026-11-03</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,900<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,903<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
