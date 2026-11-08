@@ -3,21 +3,21 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Compute Cosine Similarity Of Vector Embeddings](https://github.com/jbranchaud/til/blob/master/postgres/compute-cosine-similarity-of-vector-embeddings.md) <sup>`postgres` · 2026-11-07</sup>
 - [Set Env Var With Dokku Without A Restart](https://github.com/jbranchaud/til/blob/master/devops/set-env-var-with-dokku-without-a-restart.md) <sup>`devops` · 2026-11-07</sup>
 - [Construct A File](https://github.com/jbranchaud/til/blob/master/jq/construct-a-file.md) <sup>`jq` · 2026-11-06</sup>
 - [Scope Fin MCP Calls To Authenticated Users](https://github.com/jbranchaud/til/blob/master/llm/scope-fin-mcp-calls-to-authenticated-users.md) <sup>`llm` · 2026-11-06</sup>
 - [Generate A Random Secret Value With OpenSSL](https://github.com/jbranchaud/til/blob/master/unix/generate-a-random-secret-value-with-openssl.md) <sup>`unix` · 2026-11-05</sup>
-- [Generate Text Embeddings With AWS Bedrock](https://github.com/jbranchaud/til/blob/master/llm/generate-text-embeddings-with-aws-bedrock.md) <sup>`llm` · 2026-11-04</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,903<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,904<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
 <!-- TIL-TOP-START -->
 <a href="https://github.com/jbranchaud/til/tree/master/unix"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/unix-189-dark.svg"><img alt="unix: 189 TILs" src="assets/tiles/unix-189-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/rails"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/rails-188-dark.svg"><img alt="rails: 188 TILs" src="assets/tiles/rails-188-light.svg"></picture></a>
-<a href="https://github.com/jbranchaud/til/tree/master/postgres"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/postgres-175-dark.svg"><img alt="postgres: 175 TILs" src="assets/tiles/postgres-175-light.svg"></picture></a>
+<a href="https://github.com/jbranchaud/til/tree/master/postgres"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/postgres-176-dark.svg"><img alt="postgres: 176 TILs" src="assets/tiles/postgres-176-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/ruby"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/ruby-172-dark.svg"><img alt="ruby: 172 TILs" src="assets/tiles/ruby-172-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/vim"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/vim-159-dark.svg"><img alt="vim: 159 TILs" src="assets/tiles/vim-159-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/git"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/git-137-dark.svg"><img alt="git: 137 TILs" src="assets/tiles/git-137-light.svg"></picture></a>
