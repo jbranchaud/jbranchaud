@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,908<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [Keep Learning](https://still.visualmode.dev/blogmarks/364) <sup>`ai-assisted-coding` `learning` · 2026-11-12</sup>
 - [Building "Recipe Box" with Lovable](https://still.visualmode.dev/blogmarks/363) <sup>`ai-assisted-coding` `lovable` · 2026-11-09</sup>
 - [Render this year's calendar in the browser](https://still.visualmode.dev/blogmarks/362) <sup>`python` `calendar` · 2026-11-05</sup>
 - [Low floor / High ceiling](https://still.visualmode.dev/blogmarks/361) <sup>`llm` `ai-assisted-coding` · 2026-10-25</sup>
 - [Generate embeddings for all my TIL posts](https://still.visualmode.dev/blogmarks/360) <sup>`llm` `embeddings` `pgvector` `meta-til` · 2026-10-24</sup>
-- [On "Preventing Paste for a 'Destructive Action' Confirmation Input"](https://still.visualmode.dev/blogmarks/359) <sup>`ux` `web-development` · 2026-10-22</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
