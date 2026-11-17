@@ -3,19 +3,19 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Use Escape Sequence To Color Text Output](https://github.com/jbranchaud/til/blob/master/unix/use-escape-sequence-to-color-text-output.md) <sup>`unix` · 2026-11-17</sup>
 - [Create Tasks To Auto-Sync Notes](https://github.com/jbranchaud/til/blob/master/taskfile/create-tasks-to-auto-sync-notes.md) <sup>`taskfile` · 2026-11-15</sup>
 - [Research All Technologies In Sandbox World](https://github.com/jbranchaud/til/blob/master/factorio/research-all-technologies-in-sandbox-world.md) <sup>`factorio` · 2026-11-14</sup>
 - [Ask For An Adversarial Review](https://github.com/jbranchaud/til/blob/master/ai-assisted-coding/ask-for-an-adversarial-review.md) <sup>`ai-assisted-coding` · 2026-11-11</sup>
 - [Generate Random Secret Value With urandom](https://github.com/jbranchaud/til/blob/master/unix/generate-random-secret-value-with-urandom.md) <sup>`unix` · 2026-11-11</sup>
-- [Reheat A Chilled String](https://github.com/jbranchaud/til/blob/master/ruby/reheat-a-chilled-string.md) <sup>`ruby` · 2026-11-09</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,910<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,911<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
 <!-- TIL-TOP-START -->
-<a href="https://github.com/jbranchaud/til/tree/master/unix"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/unix-190-dark.svg"><img alt="unix: 190 TILs" src="assets/tiles/unix-190-light.svg"></picture></a>
+<a href="https://github.com/jbranchaud/til/tree/master/unix"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/unix-191-dark.svg"><img alt="unix: 191 TILs" src="assets/tiles/unix-191-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/rails"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/rails-189-dark.svg"><img alt="rails: 189 TILs" src="assets/tiles/rails-189-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/postgres"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/postgres-176-dark.svg"><img alt="postgres: 176 TILs" src="assets/tiles/postgres-176-light.svg"></picture></a>
 <a href="https://github.com/jbranchaud/til/tree/master/ruby"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tiles/ruby-173-dark.svg"><img alt="ruby: 173 TILs" src="assets/tiles/ruby-173-light.svg"></picture></a>
