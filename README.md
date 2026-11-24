@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Eject A Device So It Can Be Unplugged](https://github.com/jbranchaud/til/blob/master/mac/eject-a-device-so-it-can-be-unplugged.md) <sup>`mac` · 2026-11-24</sup>
 - [Run Specific Scheduled Workflow Early](https://github.com/jbranchaud/til/blob/master/github-actions/run-specific-scheduled-workflow-early.md) <sup>`github-actions` · 2026-11-22</sup>
 - [Connect To Hatchbox Rails Console](https://github.com/jbranchaud/til/blob/master/devops/connect-to-hatchbox-rails-console.md) <sup>`devops` · 2026-11-22</sup>
 - [Remove Claude Co-Author Trailer From Commit Messages](https://github.com/jbranchaud/til/blob/master/git/remove-claude-co-author-trailer-from-commit-messages.md) <sup>`git` · 2026-11-21</sup>
 - [Use Escape Sequence To Color Text Output](https://github.com/jbranchaud/til/blob/master/unix/use-escape-sequence-to-color-text-output.md) <sup>`unix` · 2026-11-17</sup>
-- [Create Tasks To Auto-Sync Notes](https://github.com/jbranchaud/til/blob/master/taskfile/create-tasks-to-auto-sync-notes.md) <sup>`taskfile` · 2026-11-15</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,914<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,915<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
