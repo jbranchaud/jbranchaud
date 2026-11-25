@@ -3,14 +3,14 @@
 ## Latest TILs
 
 <!-- TIL-START -->
+- [Toggle Through TODO Statuses On Current Block](https://github.com/jbranchaud/til/blob/master/logseq/toggle-through-todo-statuses-on-current-block.md) <sup>`logseq` · 2026-11-25</sup>
+- [Generate Simple SVG Diagram With D2 Lang](https://github.com/jbranchaud/til/blob/master/workflow/generate-simple-svg-diagram-with-d2-lang.md) <sup>`workflow` · 2026-11-24</sup>
 - [Eject A Device So It Can Be Unplugged](https://github.com/jbranchaud/til/blob/master/mac/eject-a-device-so-it-can-be-unplugged.md) <sup>`mac` · 2026-11-24</sup>
 - [Run Specific Scheduled Workflow Early](https://github.com/jbranchaud/til/blob/master/github-actions/run-specific-scheduled-workflow-early.md) <sup>`github-actions` · 2026-11-22</sup>
 - [Connect To Hatchbox Rails Console](https://github.com/jbranchaud/til/blob/master/devops/connect-to-hatchbox-rails-console.md) <sup>`devops` · 2026-11-22</sup>
-- [Remove Claude Co-Author Trailer From Commit Messages](https://github.com/jbranchaud/til/blob/master/git/remove-claude-co-author-trailer-from-commit-messages.md) <sup>`git` · 2026-11-21</sup>
-- [Use Escape Sequence To Color Text Output](https://github.com/jbranchaud/til/blob/master/unix/use-escape-sequence-to-color-text-output.md) <sup>`unix` · 2026-11-17</sup>
 <!-- TIL-END -->
 
-I've written <!-- TIL-COUNT-START -->1,915<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
+I've written <!-- TIL-COUNT-START -->1,917<!-- TIL-COUNT-END --> TILs and counting, more at [jbranchaud/til](https://github.com/jbranchaud/til).
 
 ### Top TIL Topics
 
@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,915<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [Introducing Vercel Board](https://still.visualmode.dev/blogmarks/366) <sup>`vercel` `ai-assisted-coding` · 2026-11-25</sup>
 - [Claude Code Status Line](https://still.visualmode.dev/blogmarks/365) <sup>`claude-code` `cli` · 2026-11-18</sup>
 - [Keep Learning](https://still.visualmode.dev/blogmarks/364) <sup>`ai-assisted-coding` `learning` · 2026-11-12</sup>
 - [Building "Recipe Box" with Lovable](https://still.visualmode.dev/blogmarks/363) <sup>`ai-assisted-coding` `lovable` · 2026-11-09</sup>
 - [Render this year's calendar in the browser](https://still.visualmode.dev/blogmarks/362) <sup>`python` `calendar` · 2026-11-05</sup>
-- [Low floor / High ceiling](https://still.visualmode.dev/blogmarks/361) <sup>`llm` `ai-assisted-coding` · 2026-10-25</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
