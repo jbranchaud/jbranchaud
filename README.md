@@ -30,11 +30,11 @@ I've written <!-- TIL-COUNT-START -->1,918<!-- TIL-COUNT-END --> TILs and counti
 ## Latest Blogmarks
 
 <!-- BLOGMARKS-START -->
+- [Why is every agent orchestrator the exact same app?](https://still.visualmode.dev/blogmarks/371) <sup>`agent-development-environment` `ai-assisted-coding` · 2026-11-26</sup>
+- [Curiosity is no solo act](https://still.visualmode.dev/blogmarks/370) <sup>`curiosity` `learning` `learn-in-public` · 2026-11-26</sup>
 - [Migrating our Messages API to Rust](https://still.visualmode.dev/blogmarks/369) <sup>`anthropic` `rewrite` · 2026-11-26</sup>
 - [Prompt for a New Codebase Evaluation](https://still.visualmode.dev/blogmarks/368) <sup>`prompting` · 2026-11-25</sup>
 - [Matt Pocock's Agent Skills](https://still.visualmode.dev/blogmarks/367) <sup>`agent-skills` `ai-assisted-coding` · 2026-11-25</sup>
-- [Introducing Vercel Board](https://still.visualmode.dev/blogmarks/366) <sup>`vercel` `ai-assisted-coding` · 2026-11-25</sup>
-- [Claude Code Status Line](https://still.visualmode.dev/blogmarks/365) <sup>`claude-code` `cli` · 2026-11-18</sup>
 <!-- BLOGMARKS-END -->
 
 More at [still.visualmode.dev/blogmarks](https://still.visualmode.dev/blogmarks).
